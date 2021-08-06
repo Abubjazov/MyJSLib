@@ -1,3 +1,3 @@
 import './lib/lib';
 
-$('.active').toggle().toggle();
+$('.active').toggleClass('hello');
