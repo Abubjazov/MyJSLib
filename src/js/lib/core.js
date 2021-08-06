@@ -1,24 +1,19 @@
-(() => {
-    const $ = function(selector) {
-        const elements = document.querySelectorAll(selector);
-        const object = {};
+const $ = function(selector) {
+    return new $.prototype.init(selector);
+};
 
-        object.hide = () => {
-            elements.forEach(elem => {
-                elem.style.display = 'none';
-            });
-            return object;
-        };
+$.prototype.init = function(selector) {
+    if (!selector) {
+        return this; // {}
+    }
+    Object.assign(this, document.querySelectorAll(selector));
+    this.length = document.querySelectorAll(selector).length;
 
-        object.show = () => {
-            elements.forEach(elem => {
-                elem.style.display = '';
-            });
-            return object;
-        };
+    return this;
+};
 
-        return object;
-    };
+$.prototype.init.prototype = $.prototype;
 
-    window.$ = $;
-})();
+window.$ = $;
+
+export default $;
