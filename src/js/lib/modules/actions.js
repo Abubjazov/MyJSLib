@@ -1,37 +1,40 @@
 import $ from '../core';
 
-$.prototype.triggerOn = function(eventName, callback) {
-    if (!eventName || !callback) {
-        return this;
-    }
-
+$.prototype.html = function(content) {
     for (let i = 0; i < this.length; i++) {
-        this[i].addEventListener(eventName, callback);
-    }
-
-    return this;
-};
-
-$.prototype.triggerOff = function(eventName, callback) {
-    if (!eventName || !callback) {
-        return this;
-    }
-
-    for (let i = 0; i < this.length; i++) {
-        this[i].removeEventListener(eventName, callback);
-    }
-
-    return this;
-};
-
-$.prototype.click = function(handler) {
-    for (let i = 0; i < this.length; i++) {
-        if (handler) {
-            this[i].addEventListener('click', handler);
+        if (content) {
+            this[i].innerHTML = content;
         } else {
-            this[i].click();
-        }       
+            return  this[i].innerHTML;
+        }
     }
 
     return this;
 };
+
+$.prototype.eq = function(i) {
+    const swap = this[i];
+    const objLength = Object.keys(this).length;
+
+    for (let i = 0; i < objLength; i++) {
+        delete this[i];
+    }
+
+    this[0] = swap;
+    this.length = 1;
+
+    return this;
+};
+
+$.prototype.index = function() {
+   const parent = this[0].parentNode;
+   const childs = [...parent.children];
+
+   const findMyIndex = (item) => {
+       return item == this[0];
+
+   };
+
+   return childs.findIndex(findMyIndex);
+};
+
