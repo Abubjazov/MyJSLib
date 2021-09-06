@@ -39,3 +39,20 @@ $.prototype.fadeIn = function(duration, display, fin) {
 
     return this;
 };
+
+$.prototype.fadeOut = function(duration, fin) {
+    for (let i = 0; i < this.length; i++) {
+        const _fadeOut = (complection) => {
+            this[i].style.opacity = 1 - complection;
+
+            if (complection === 1) {
+                this[i].style.display = 'none';
+            }
+        };
+
+        const animation = this.animateOverTime(duration, _fadeOut, fin);
+        requestAnimationFrame(animation);
+    }
+
+    return this;
+};
