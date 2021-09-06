@@ -11,7 +11,7 @@ $.prototype.addClass = function(...classNames) {
     return this;
 };
 
-$.prototype.delClass = function(...classNames) {
+$.prototype.removeClass = function(...classNames) {
     for (let i = 0; i < this.length; i++) {
         if (!this[i].classList) {
             continue;
