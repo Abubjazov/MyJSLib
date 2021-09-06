@@ -24,3 +24,18 @@ $.prototype.animateOverTime = function(duration, callback, fin) {
 
     return _animateOverTime;
 };
+
+$.prototype.fadeIn = function(duration, display, fin) {
+    for (let i = 0; i < this.length; i++) {
+        this[i].style.display = display || 'block';
+
+        const _fadeIn = (complection) => {
+            this[i].style.opacity = complection;
+        };
+
+        const animation = this.animateOverTime(duration, _fadeIn, fin);
+        requestAnimationFrame(animation);
+    }
+
+    return this;
+};
