@@ -27,35 +27,35 @@ import './lib/lib';
 
 // $('.dropdown-toggle').dropdown();
 
-$('#trigger').click(() => $('#trigger').createModal({
-    text: {
-        title: 'JS Modal Title',
-        body: '13 Lorem ipsum dolor, sit amet consectetur adipisicing elit! Doloribus.'
-    },
-    btns: {
-        count: 3,
-        settings: [
-            [
-                'Close',
-                ['btn', 'btn-danger', 'mr-10'],
-                true
-            ],
-            [
-                'Success',
-                ['btn', 'btn-success', 'mr-10'],
-                false,
-                () => {
-                    alert('Данные отправлены на сервер');
-                }
-            ],
-            [
-                'Warning',
-                ['btn', 'btn-warning'],
-                false,
-                () => {
-                    alert('Чувак это success!!!!');
-                }
-            ]
-        ]
-    }
-}));
+// $('#trigger').click(() => $('#trigger').createModal({
+//     text: {
+//         title: 'JS Modal Title',
+//         body: '13 Lorem ipsum dolor, sit amet consectetur adipisicing elit! Doloribus.'
+//     },
+//     btns: {
+//         count: 3,
+//         settings: [
+//             [
+//                 'Close',
+//                 ['btn', 'btn-danger', 'mr-10'],
+//                 true
+//             ],
+//             [
+//                 'Success',
+//                 ['btn', 'btn-success', 'mr-10'],
+//                 false,
+//                 () => {
+//                     alert('Данные отправлены на сервер');
+//                 }
+//             ],
+//             [
+//                 'Warning',
+//                 ['btn', 'btn-warning'],
+//                 false,
+//                 () => {
+//                     alert('Чувак это success!!!!');
+//                 }
+//             ]
+//         ]
+//     }
+// }));
