@@ -59,3 +59,6 @@ import './lib/lib';
 //         ]
 //     }
 // }));
+
+$().get('https://jsonplaceholder.typicode.com/todos/1')
+   .then(resource => console.log(resource));
